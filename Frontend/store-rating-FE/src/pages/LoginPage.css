@@ -1,0 +1,148 @@
+/* LoginPage.css - FIXED FOR PERFECT CENTERING */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* FULL PAGE CENTERING - This is the key fix */
+.login-page-wrapper {
+  min-height: 100vh;        /* Full viewport height */
+  display: flex;            /* Flexbox centering */
+  justify-content: center;  /* Horizontal center */
+  align-items: center;      /* Vertical center */
+  padding: 20px;            /* Safe padding on mobile */
+  background: linear-gradient(135deg, #f4f7f9 0%, #e2e8f0 100%);
+}
+
+/* LOGIN CARD - Perfectly centered */
+.login-card {
+  background: white;
+  width: 100%;
+  max-width: 450px;
+  padding: 40px 32px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  border: 1px solid #e5e7eb;
+  position: relative;       /* Ensures it stays centered */
+}
+
+/* TITLE */
+.login-card h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #1f2937;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+/* ERROR MESSAGE */
+.error-msg {
+  background-color: #fee2e2;
+  color: #dc2626;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #fecaca;
+  margin-bottom: 24px;
+  font-size: 0.9rem;
+}
+
+/* FORM - FIXED: Column layout, not row */
+form {
+  display: flex;
+  flex-direction: column;   /* CHANGED: Column instead of row */
+  gap: 20px;                /* Proper vertical spacing */
+}
+
+/* INPUTS */
+.login-input {
+  width: 100%;
+  padding: 16px 20px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: #fafbfc;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  background: black;
+  box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.1);
+  transform: translateY(-1px);
+}
+
+.login-input::placeholder {
+  color: #9ca3af;
+}
+
+/* BUTTONS CONTAINER */
+.button-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* BUTTONS */
+.primary-btn, .logout-button {
+  flex: 1;
+  padding: 16px 24px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  border: none;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+  color: white;
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(74, 144, 226, 0.4);
+}
+
+.logout-button {
+  background: transparent;
+  color: #6b7280;
+  border: 2px solid #d1d5db;
+}
+
+.logout-button:hover {
+  background: #f3f4f6;
+  color: #374151;
+  transform: translateY(-1px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .login-page-wrapper {
+    padding: 20px 15px;
+  }
+  
+  .login-card {
+    padding: 32px 24px;
+    margin: 10px;
+  }
+  
+  .button-group {
+    flex-direction: column;
+  }
+  
+  .primary-btn, .logout-button {
+    width: 100%;
+  }
+}
