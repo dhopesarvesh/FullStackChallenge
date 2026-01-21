@@ -29,84 +29,75 @@ const Home = () => {
   );
 
   return (
-    <>
-      {/* HEADER */}
-      <header>
-        <div className="header-content">
-          <div className="logo">
-            <h2>StoreHub</h2>
-          </div>
-          <nav>
-            <ul>
-              <li><a href="/login" className="nav-link">Login</a></li>
-              <li><a href="/signup" className="nav-link">SignUp</a></li>
-            
-            </ul>
-          </nav>
+  <div className="app-layout">
+    {/* HEADER */}
+    <header className="app-header">
+      <div className="header-content">
+        <h2 className="logo">StoreHub</h2>
+
+        <nav>
+          <ul className="nav-links">
+            <li><a href="/login">Login</a></li>
+            <li><a href="/signup">SignUp</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    {/* MAIN CONTENT */}
+    <main className="app-main">
+      <div className="home-container">
+        <div className="home-header">
+          <h1>Store Rating Platform</h1>
+          <p>Discover stores and see what others are saying</p>
+
+          <input
+            type="text"
+            placeholder="Search stores by name or address..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="search-input"
+          />
         </div>
-      </header>
 
-      {/* MAIN CONTENT */}
-      <main>
-        <div className="home-container">
-          <div className="home-header">
-            <h1>Store Rating Platform</h1>
-            <p>Discover stores and see what others are saying</p>
+        <div className="store-grid">
+          {filteredStores.length === 0 && (
+            <p className="no-stores">No stores found matching your search</p>
+          )}
 
-            <div className="home-buttons">
-              <button onClick={() => navigate("/login")} className="primary-btn">
-                Login
-              </button>
-              <button onClick={() => navigate("/signup")} className="secondary-btn">
-                Signup
-              </button>
-            </div>
-
-            <input
-              type="text"
-              placeholder="Search stores by name or address..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="search-input"
-            />
-          </div>
-
-          <div className="store-grid">
-            {filteredStores.length === 0 && (
-              <p className="no-stores">No stores found matching your search</p>
-            )}
-
-            {filteredStores.map((store) => (
-              <StorePreviewCard key={store.id} store={store} />
-            ))}
-          </div>
+          {filteredStores.map((store) => (
+            <StorePreviewCard key={store.id} store={store} />
+          ))}
         </div>
-      </main>
+      </div>
+    </main>
 
-      {/* FOOTER */}
-      <footer>
-        <div className="footer-content">
-          <div className="footer-section">
-            <h3>About StoreHub</h3>
-            <p>Connecting customers with the best local stores through honest ratings and reviews.</p>
-          </div>
-          <div className="footer-section">
-            <h3>Quick Links</h3>
-            <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#stores">Stores</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="/contact">Contact</a></li>
-            </ul>
-          </div>
-         
+    {/* FOOTER */}
+    <footer className="app-footer">
+      <div className="footer-content">
+        <div>
+          <h3>About StoreHub</h3>
+          <p>Connecting customers with the best local stores through honest ratings and reviews.</p>
         </div>
-        <div className="footer-bottom">
-          <p>&copy; 2026 StoreHub. All rights reserved. | Made with ❤️ in India</p>
+
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Stores</a></li>
+            <li><a href="/">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
         </div>
-      </footer>
-    </>
-  );
+      </div>
+
+      <p className="footer-bottom">
+        © 2026 StoreHub. All rights reserved | Made with ❤️ in India
+      </p>
+    </footer>
+  </div>
+);
+
 };
 
 export default Home;

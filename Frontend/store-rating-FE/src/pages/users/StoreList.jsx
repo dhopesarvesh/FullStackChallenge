@@ -3,6 +3,7 @@ import { getStores } from "../../api/store.api";
 import { submitRating, updateRating } from "../../api/rating.api";
 import { AuthContext } from "../../context/AuthContext";
 import StoreCard from "../../components/store/StoreCard";
+import "./storelist.css";
 
 
 
@@ -44,7 +45,7 @@ const StoreList = () => {
     };
   
     return (
-      <div style={{ padding: "20px" }}>
+        <div className="store-list-container">
         <h2>Available Stores</h2>
   
         {stores.map((store) => (

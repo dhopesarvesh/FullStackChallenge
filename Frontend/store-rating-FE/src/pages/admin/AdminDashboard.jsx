@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { getAdminDashboard } from "../../api/admin.api";
 import UserTable from "../../pages/admin/UserTable";
 import StoreTable from "../../pages/admin/StoreTable";
+import "./admind.css";
 
 const AdminDashboard = () => {
   const [stats, setStats] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchStats = async () => {
@@ -13,7 +16,7 @@ const AdminDashboard = () => {
         setStats({
           totalUsers: res.data.totalUsers || 0,
           totalStores: res.data.totalStores || 0,
-          totalRatings: res.data.totalRatings || 0
+          totalRatings: res.data.totalRatings || 0,
         });
       } catch (error) {
         console.error("Failed to load dashboard", error);
@@ -23,18 +26,35 @@ const AdminDashboard = () => {
     fetchStats();
   }, []);
 
+  const handleLogout = () => {
+    // Clear auth data
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    localStorage.removeItem("role");
+
+    navigate("/login");
+  };
+
   if (!stats) return <p>Loading dashboard...</p>;
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h2>Admin Dashboard</h2>
+    <div className="admin-dashboard">
+      {/* HEADER */}
+      <div className="admin-header">
+        <h2>Admin Dashboard</h2>
+        <button className="logout-btn" onClick={handleLogout}>
+          Logout
+        </button>
+      </div>
 
-      <div style={{ display: "flex", gap: "20px", marginBottom: "30px" }}>
+      {/* STATS */}
+      <div className="stats-container">
         <StatCard label="Total Users" value={stats.totalUsers} />
         <StatCard label="Total Stores" value={stats.totalStores} />
         <StatCard label="Total Ratings" value={stats.totalRatings} />
       </div>
 
+      {/* TABLES */}
       <UserTable />
       <StoreTable />
     </div>
@@ -42,14 +62,7 @@ const AdminDashboard = () => {
 };
 
 const StatCard = ({ label, value }) => (
-  <div
-    style={{
-      border: "1px solid #ccc",
-      padding: "15px",
-      width: "150px",
-      textAlign: "center"
-    }}
-  >
+  <div className="stat-card">
     <h3>{value}</h3>
     <p>{label}</p>
   </div>

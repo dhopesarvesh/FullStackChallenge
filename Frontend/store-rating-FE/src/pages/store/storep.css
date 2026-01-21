@@ -1,0 +1,37 @@
+/* ===== STORE CARD ===== */
+.store-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px 18px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  /* ===== HOVER EFFECT ===== */
+  .store-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* ===== STORE NAME ===== */
+  .store-card h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    color: #1e293b;
+  }
+  
+  /* ===== ADDRESS ===== */
+  .store-address {
+    margin: 0 0 10px;
+    font-size: 14px;
+    color: #64748b;
+  }
+  
+  /* ===== RATING ===== */
+  .store-rating {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #2563eb;
+  }
+  

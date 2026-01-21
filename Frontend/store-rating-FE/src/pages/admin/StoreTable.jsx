@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getAllStoresAdmin } from "../../api/admin.api";
+import "./storet.css";
 
 const StoreTable = () => {
   const [stores, setStores] = useState([]);

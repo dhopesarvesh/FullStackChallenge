@@ -1,0 +1,14 @@
+/* ===== STORE LIST CONTAINER ===== */
+.store-list-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+  
+  /* ===== PAGE TITLE ===== */
+  .store-list-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #1e293b;
+  }
+  

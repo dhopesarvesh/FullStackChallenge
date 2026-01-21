@@ -1,0 +1,65 @@
+/* ===== STORE DETAIL WRAPPER ===== */
+.store-detail-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 24px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* ===== STORE INFO ===== */
+  .store-detail-container h2 {
+    margin-bottom: 6px;
+    color: #1e293b;
+  }
+  
+  .store-address {
+    margin: 0 0 8px;
+    font-size: 14px;
+    color: #64748b;
+  }
+  
+  .store-overall-rating {
+    margin-bottom: 16px;
+    font-weight: 500;
+    color: #2563eb;
+  }
+  
+  /* ===== USER RATING SECTION ===== */
+  .user-rating-section {
+    margin-top: 12px;
+  }
+  
+  .feedback-textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #cbd5f5;
+    font-size: 14px;
+    resize: vertical;
+    outline: none;
+  }
+  
+  .feedback-textarea:focus {
+    border-color: #2563eb;
+  }
+  
+  /* ===== SUBMIT BUTTON ===== */
+  .rating-submit-btn {
+    margin-top: 12px;
+    padding: 10px 16px;
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .rating-submit-btn:hover {
+    background-color: #1d4ed8;
+  }
+  

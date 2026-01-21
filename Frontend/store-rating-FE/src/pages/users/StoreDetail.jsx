@@ -4,6 +4,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { getStores } from "../../api/store.api";
 import StarRating from "../../components/store/StarRating";
 import { submitRating, updateRating } from "../../api/rating.api";
+import "./storedetail.css";
 
 const StoreDetail = () => {
   const { id } = useParams();

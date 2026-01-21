@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import "./storep.css";
 
 const StorePreviewCard = ({ store }) => {
   const navigate = useNavigate();
@@ -23,7 +24,13 @@ const StorePreviewCard = ({ store }) => {
       <p className="store-rating">
         ⭐ {store.overallRating ? store.overallRating : "No ratings yet"}
       </p>
+
+      <style>
+        
+      </style>
     </div>
+
+  
   );
 };
 
